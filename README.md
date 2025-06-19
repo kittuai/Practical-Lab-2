@@ -1,59 +1,52 @@
-# Lab 2 – Multivariate Regression and Non-Parametric Models 
-**Course:** Machine Learning Programming (PROG8245)
+# Lab 2 – Multivariate Regression and Non-Parametric Models
+
+**Student Name:** Krishna Reddy Bovilla  
+**Student ID:** 9050861  
+**Course:** Machine Learning Programming (PROG8245)  
+**Institution:** Conestoga College
 
 ---
 
 ## Repository Access
 
-The full project, including the notebook and dependency files, is available at:
-
-https://github.com/kittuai/Practical-Lab-2.git
+The complete project, including the assignment notebook and environment configuration, is hosted at:
 
 To clone the repository locally:
 
 ```bash
-https://github.com/kittuai/Practical-Lab-2.git
+git clone https://github.com/kittuai/Practical-Lab-2.git
 cd Practical-Lab-2
 ```
 
-Then follow the setup instructions below to configure your environment and run the notebook.
-
 ---
 
-## Assignment Context
+## About the Assignment
 
-This notebook was developed as part of a machine learning laboratory assignment. The objectives include:
+This notebook was developed for **Lab 2: Multivariate Regression and Non-Parametric Models**, a practical component of the Machine Learning Programming course. The lab focuses on building and comparing different regression models using the **Scikit-learn Diabetes dataset**, with special attention to:
 
-- Developing and evaluating multiple regression models:
-  - Polynomial Regression (Univariate and Multivariate)
+- Understanding and applying multiple modeling techniques:
+  - Univariate Polynomial Regression
+  - Multivariate Polynomial Regression
   - Decision Tree Regressor
-  - k-Nearest Neighbors (kNN)
-- Measuring and comparing model performance using:
-  - Coefficient of Determination (R²)
-  - Mean Absolute Error (MAE)
-  - Mean Absolute Percentage Error (MAPE)
-- Utilizing the Scikit-learn Diabetes dataset as a case study
-- Writing modular, beginner-friendly code with clear structure and documentation
-
-This setup is designed to be easily reproducible and adaptable across different development environments.
-
----
-
-## Run Jupyter Notebook in an Isolated Python Environment (VS Code)
-
-This repository contains a Jupyter Notebook and a `requirements.txt` file configured to run in a clean, isolated Python environment using `venv` and Visual Studio Code. This setup ensures reproducibility, avoids dependency conflicts, and provides a robust development workflow for machine learning projects.
+  - k-Nearest Neighbors Regressor (kNN)
+- Evaluating models using key regression metrics:
+  - R² (Coefficient of Determination)
+  - MAE (Mean Absolute Error)
+  - MAPE (Mean Absolute Percentage Error)
+- Using a consistent train–validation–test split
+- Writing clean, beginner-friendly Python code with professional structure and clear inline comments
+- Presenting visual insights to support interpretation and analysis
 
 ---
-
 
 ## Project Structure
 
 ```
-project-folder/
+Practical-Lab-2/
 │
-├── your_notebook.ipynb         # Main notebook file
-├── requirements.txt            # List of Python dependencies
-└── README.md                   # Environment setup and project details
+├── Lab2_Regression_Models.ipynb  # Main notebook with all model comparisons
+├── requirements.txt              # List of Python dependencies
+└── README.md                     # Setup instructions and project documentation
 ```
 
 ---
@@ -97,7 +90,7 @@ python -m venv env
 
 ### 3. Install Required Dependencies
 
-Install all dependencies listed in the `requirements.txt` file:
+Install all required libraries from `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
@@ -115,25 +108,37 @@ python -m ipykernel install --user --name=env --display-name "Python (env)"
 
 ### 5. Open and Run the Notebook
 
-1. Launch Visual Studio Code and open the project folder.
-2. Open the notebook file (`your_notebook.ipynb`).
-3. Use the kernel selector at the top right to choose: **Python (env)**.
-4. Run the notebook cells to execute the analysis.
+1. Launch **Visual Studio Code**
+2. Open the `Practical-Lab-2` folder
+3. Open `Lab2_Regression_Models.ipynb`
+4. Select the kernel **Python (env)** from the top-right kernel picker
+5. Run all cells to explore and compare the models
 
 ---
 
-## Advantages of This Setup
+## Key Features
 
-- **Isolation**: Keeps project dependencies separate from global Python packages.
-- **Reproducibility**: Ensures consistent results across different systems.
-- **VS Code Integration**: Seamless operation within the Visual Studio Code environment using the Python and Jupyter extensions.
+-  Multiple model comparisons in one structured notebook
+-  Visual plots to support evaluation of model performance
+-  Clean and modular code following best practices
+-  Fully reproducible workflow using virtual environments
+-  Designed for educational clarity and technical depth
+
+---
+
+## Problem Framing & Final Model Insights
+
+The primary objective was to predict the **progression of diabetes** in patients based on 10 input features from the Scikit-learn Diabetes dataset. The problem was framed as a supervised regression task.
+
+After training and evaluating all models, the following observations were made:
+
+- **Univariate Polynomial Regression** captured nonlinear trends but was limited by using only one feature.
+- **Multivariate Polynomial Regression** improved performance slightly but was prone to overfitting with higher degrees.
+- **Decision Tree Regressor** offered strong interpretability and handled nonlinearity well, but was sensitive to depth and prone to variance.
+- **k-Nearest Neighbors** provided smooth predictions but required careful tuning of the number of neighbors.
+
+📌 **Best Performing Model:**  
+Based on the R² score and error metrics across validation and test sets, the **Decision Tree Regressor** emerged as the most effective model, striking a balance between accuracy and interpretability for this dataset.
 
 ---
 
-## Author
-
-**Name:** Krishna Reddy Bovilla  
-**Student ID:** 9050861  
-**Institution:** conestoga college
-
----
