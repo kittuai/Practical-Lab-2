@@ -1,144 +1,108 @@
-# Lab 2 – Multivariate Regression and Non-Parametric Models
+#  Lab 2: Multivariate Regression & Non-Parametric Models
 
 **Student Name:** Krishna Reddy Bovilla  
 **Student ID:** 9050861  
 **Course:** Machine Learning Programming (PROG8245)  
-**Institution:** Conestoga College
+**Institution:** Conestoga College  
 
 ---
 
-## Repository Access
+##  Objective
 
-The complete project, including the assignment notebook and environment configuration, is hosted at:
+The goal of this lab is to explore different regression techniques using the Scikit-learn Diabetes dataset. Specifically, we compare:
 
-To clone the repository locally:
+- Univariate Polynomial Regression
+- Multivariate Polynomial Regression
+- Decision Tree Regression
+- k-Nearest Neighbors Regression
+
+Each model is evaluated based on its ability to predict diabetes progression, using R², MAE, and MAPE metrics.
+
+---
+
+##  Project Structure
+
+```
+Practical-Lab-2/
+│
+├── Lab2_Regression_Models.ipynb   # Main notebook with all models and analysis
+├── requirements.txt               # All required packages
+└── README.md                      # Project documentation
+```
+
+---
+
+##  Getting Started
+
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/kittuai/Practical-Lab-2.git
 cd Practical-Lab-2
 ```
 
----
-
-## About the Assignment
-
-This notebook was developed for **Lab 2: Multivariate Regression and Non-Parametric Models**, a practical component of the Machine Learning Programming course. The lab focuses on building and comparing different regression models using the **Scikit-learn Diabetes dataset**, with special attention to:
-
-- Understanding and applying multiple modeling techniques:
-  - Univariate Polynomial Regression
-  - Multivariate Polynomial Regression
-  - Decision Tree Regressor
-  - k-Nearest Neighbors Regressor (kNN)
-- Evaluating models using key regression metrics:
-  - R² (Coefficient of Determination)
-  - MAE (Mean Absolute Error)
-  - MAPE (Mean Absolute Percentage Error)
-- Using a consistent train–validation–test split
-- Writing clean, beginner-friendly Python code with professional structure and clear inline comments
-- Presenting visual insights to support interpretation and analysis
-
----
-
-## Project Structure
-
-```
-Practical-Lab-2/
-│
-├── Lab2_Regression_Models.ipynb  # Main notebook with all model comparisons
-├── requirements.txt              # List of Python dependencies
-└── README.md                     # Setup instructions and project documentation
-```
-
----
-
-## Prerequisites
-
-To run this project, ensure the following are installed:
-
-- Python 3.8 or higher
-- Visual Studio Code
-- VS Code Extensions:
-  - Python
-  - Jupyter
-
----
-
-## Setup Instructions
-
-### 1. Create a Virtual Environment
+### 2. Set Up Virtual Environment
 
 ```bash
 python -m venv env
 ```
 
-### 2. Activate the Environment
+Activate it:
 
-- **Windows (CMD):**
-  ```bash
-  env\Scripts\activate
-  ```
-- **Windows (PowerShell):**
-  ```powershell
-  .\env\Scripts\Activate.ps1
-  ```
-- **macOS/Linux:**
-  ```bash
-  source env/bin/activate
-  ```
+- **Windows CMD:** `env\Scripts\activate`  
+- **PowerShell:** `.\env\Scripts\Activate.ps1`  
+- **macOS/Linux:** `source env/bin/activate`
 
----
-
-### 3. Install Required Dependencies
-
-Install all required libraries from `requirements.txt`:
+### 3. Install Requirements
 
 ```bash
 pip install -r requirements.txt
 ```
 
----
-
-### 4. Register the Environment as a Jupyter Kernel
+### 4. Add Jupyter Kernel
 
 ```bash
 python -m ipykernel install --user --name=env --display-name "Python (env)"
 ```
 
----
+### 5. Run the Notebook
 
-### 5. Open and Run the Notebook
-
-1. Launch **Visual Studio Code**
-2. Open the `Practical-Lab-2` folder
-3. Open `Lab2_Regression_Models.ipynb`
-4. Select the kernel **Python (env)** from the top-right kernel picker
-5. Run all cells to explore and compare the models
+1. Launch VS Code  
+2. Open `Lab2_Regression_Models.ipynb`  
+3. Set kernel to **Python (env)**  
+4. Run all cells
 
 ---
 
-## Key Features
+##  Model Summary & Comparison
 
--  Multiple model comparisons in one structured notebook
--  Visual plots to support evaluation of model performance
--  Clean and modular code following best practices
--  Fully reproducible workflow using virtual environments
--  Designed for educational clarity and technical depth
+| Model                          | Characteristics                                         | Notes                                                        |
+|-------------------------------|----------------------------------------------------------|--------------------------------------------------------------|
+| **Univariate Polynomial**      | Simple curve fit with only BMI                         | Misses other influential features                            |
+| **Multivariate Polynomial**    | Uses multiple features, more balanced fit              | **Best performance** — smooth, generalizable predictions     |
+| **Decision Tree Regressor**   | Rule-based, stepwise predictions                       | Less smooth; performs in chunks                              |
+| **kNN Regressor**              | Distance-based; uses neighborhood for prediction       | Jumpy and unstable at the edges                              |
+
+---
+
+##  Final Model Insight
+
+After comparing all models, the **Multivariate Polynomial Regression** model produced the most consistent and interpretable predictions when BMI was varied. It effectively balances complexity and generalization by leveraging multiple features such as `s5`, `bp`, and `s4`.
+
+> **Conclusion:**  
+> The Multivariate Polynomial Regression model is the most appropriate for modeling diabetes progression in this dataset.
 
 ---
 
-## Problem Framing & Final Model Insights
+##  Key Features of the Notebook
 
-The primary objective was to predict the **progression of diabetes** in patients based on 10 input features from the Scikit-learn Diabetes dataset. The problem was framed as a supervised regression task.
-
-After training and evaluating all models, the following observations were made:
-
-- **Univariate Polynomial Regression** captured nonlinear trends but was limited by using only one feature.
-- **Multivariate Polynomial Regression** improved performance slightly but was prone to overfitting with higher degrees.
-- **Decision Tree Regressor** offered strong interpretability and handled nonlinearity well, but was sensitive to depth and prone to variance.
-- **k-Nearest Neighbors** provided smooth predictions but required careful tuning of the number of neighbors.
-
-📌 **Best Performing Model:**  
-Based on the R² score and error metrics across validation and test sets, the **Decision Tree Regressor** emerged as the most effective model, striking a balance between accuracy and interpretability for this dataset.
+-  Clear explanation of each regression model
+-  Visual analysis for model interpretation
+-  Metrics comparison across training, validation, and test sets
+-  Clean, beginner-friendly code with markdown guidance
+-  Fully reproducible using `venv` and `requirements.txt`
 
 ---
+
+
 
