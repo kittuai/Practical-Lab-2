@@ -2,7 +2,7 @@
 
 **Student Name:** Krishna Reddy Bovilla  
 **Student ID:** 9050861  
-**Course:** Machine Learning Programming (PROG8245)  
+**Course:** Foundations of Machine Learning Frameworks  
 **Institution:** Conestoga College  
 
 ---
