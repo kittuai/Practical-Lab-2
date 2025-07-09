@@ -1,108 +1,90 @@
-#  Lab 2: Multivariate Regression & Non-Parametric Models
+# IR_InvertedMatrix_Workshop
 
-**Student Name:** Krishna Reddy Bovilla  
-**Student ID:** 9050861  
-**Course:** Foundations of Machine Learning Frameworks  
+**Course:** Machine Learning Programming  
 **Institution:** Conestoga College  
+**Team Number:** 5
+
+**Team Members:**  
+- Mandeep Singh (ID: 8989367)  
+- Kumari Nikitha Singh (ID: 9053016)  
+- Krishna (ID: 905861)
 
 ---
 
-##  Objective
+## Objective
 
-The goal of this lab is to explore different regression techniques using the Scikit-learn Diabetes dataset. Specifically, we compare:
-
-- Univariate Polynomial Regression
-- Multivariate Polynomial Regression
-- Decision Tree Regression
-- k-Nearest Neighbors Regression
-
-Each model is evaluated based on its ability to predict diabetes progression, using R², MAE, and MAPE metrics.
+This workshop implements a simple but realistic **Inverted Index** with positional information.  
+We apply standard Information Retrieval (IR) techniques on real text to show how search systems store and match words and phrases efficiently.
 
 ---
 
-##  Project Structure
+## Repository
 
-```
-Practical-Lab-2/
-│
-├── Lab2_Regression_Models.ipynb   # Main notebook with all models and analysis
-├── requirements.txt               # All required packages
-└── README.md                      # Project documentation
-```
+**GitHub Repo:**  
+[IR-invertedmatrix-workshop](https://github.com/kittuai/IR-invertedmatrix-workshop.git)
 
 ---
 
-##  Getting Started
+## Contents
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/kittuai/Practical-Lab-2.git
-cd Practical-Lab-2
-```
-
-### 2. Set Up Virtual Environment
-
-```bash
-python -m venv env
-```
-
-Activate it:
-
-- **Windows CMD:** `env\Scripts\activate`  
-- **PowerShell:** `.\env\Scripts\Activate.ps1`  
-- **macOS/Linux:** `source env/bin/activate`
-
-### 3. Install Requirements
-
-```bash
-pip install -r requirements.txt
-```
-
-### 4. Add Jupyter Kernel
-
-```bash
-python -m ipykernel install --user --name=env --display-name "Python (env)"
-```
-
-### 5. Run the Notebook
-
-1. Launch VS Code  
-2. Open `Lab2_Regression_Models.ipynb`  
-3. Set kernel to **Python (env)**  
-4. Run all cells
+- **IR_InvertedMatrix_Workshop.ipynb** — Jupyter notebook with:
+  - Document collection
+  - Tokenizer
+  - Normalization pipeline
+  - Positional inverted index
+  - Queries and results
+- **README.md** — This file with all project details.
 
 ---
 
-##  Model Summary & Comparison
+## Getting Started
 
-| Model                          | Characteristics                                         | Notes                                                        |
-|-------------------------------|----------------------------------------------------------|--------------------------------------------------------------|
-| **Univariate Polynomial**      | Simple curve fit with only BMI                         | Misses other influential features                            |
-| **Multivariate Polynomial**    | Uses multiple features, more balanced fit              | **Best performance** — smooth, generalizable predictions     |
-| **Decision Tree Regressor**   | Rule-based, stepwise predictions                       | Less smooth; performs in chunks                              |
-| **kNN Regressor**              | Distance-based; uses neighborhood for prediction       | Jumpy and unstable at the edges                              |
+1. **Clone the Repository**
+   ```
+   git clone https://github.com/kittuai/IR-invertedmatrix-workshop.git
+   cd IR-invertedmatrix-workshop
+   ```
+
+2. **Set Up a Virtual Environment**
+   ```
+   python -m venv env
+   ```
+
+   **Activate it:**  
+   - **Windows (CMD):** `env\Scripts\activate`  
+   - **PowerShell:** `.\env\Scripts\Activate.ps1`  
+   - **macOS/Linux:** `source env/bin/activate`
+
+3. **Install Requirements**
+   *(Install any packages you need for the notebook)*  
+   ```
+   pip install scikit-learn nltk jupyter
+   ```
+
+4. **Add Jupyter Kernel**
+   ```
+   python -m ipykernel install --user --name=env --display-name "Python (env)"
+   ```
+
+5. **Run the Notebook**
+   - Open `IR_InvertedMatrix_Workshop.ipynb` in VS Code or Jupyter Lab.
+   - Set the kernel to **Python (env)**.
+   - Run all cells step by step.
 
 ---
 
-##  Final Model Insight
+## Key Learning
 
-After comparing all models, the **Multivariate Polynomial Regression** model produced the most consistent and interpretable predictions when BMI was varied. It effectively balances complexity and generalization by leveraging multiple features such as `s5`, `bp`, and `s4`.
-
-> **Conclusion:**  
-> The Multivariate Polynomial Regression model is the most appropriate for modeling diabetes progression in this dataset.
-
----
-
-##  Key Features of the Notebook
-
--  Clear explanation of each regression model
--  Visual analysis for model interpretation
--  Metrics comparison across training, validation, and test sets
--  Clean, beginner-friendly code with markdown guidance
--  Fully reproducible using `venv` and `requirements.txt`
+- How to tokenize and normalize text.
+- How an inverted index maps terms to documents.
+- How positional indexing supports phrase queries.
+- How to test queries with clear results.
 
 ---
 
+## Final Note
 
+This notebook shows the core IR pipeline behind modern search.  
+It is a practical base for more advanced indexing and ranking methods.
 
+**Submitted for:** PROG8245 — Machine Learning Programming
