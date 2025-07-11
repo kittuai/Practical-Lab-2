@@ -1,90 +1,111 @@
-# IR_InvertedMatrix_Workshop
+# Practical Lab 2: Multivariate Regression & Non-Parametric Models
 
-**Course:** Machine Learning Programming  
+**Student Name:** Krishna Reddy Bovilla  
+**Student ID:** 9050861  
+**Course:** Machine Learning Programming (PROG8245) - Foundations of Machine Learning Frameworks  
 **Institution:** Conestoga College  
-**Team Number:** 5
-
-**Team Members:**  
-- Mandeep Singh (ID: 8989367)  
-- Kumari Nikitha Singh (ID: 9053016)  
-- Krishna (ID: 905861)
 
 ---
 
-## Objective
+## 📌 Objective
 
-This workshop implements a simple but realistic **Inverted Index** with positional information.  
-We apply standard Information Retrieval (IR) techniques on real text to show how search systems store and match words and phrases efficiently.
+The objective of this lab is to explore and compare multiple regression techniques for predicting diabetes progression using the **Scikit-learn Diabetes dataset**.  
+The following models are implemented and analyzed:
 
----
+- **Univariate Polynomial Regression**
+- **Multivariate Polynomial Regression**
+- **Decision Tree Regression**
+- **k-Nearest Neighbors Regression**
 
-## Repository
-
-**GitHub Repo:**  
-[IR-invertedmatrix-workshop](https://github.com/kittuai/IR-invertedmatrix-workshop.git)
-
----
-
-## Contents
-
-- **IR_InvertedMatrix_Workshop.ipynb** — Jupyter notebook with:
-  - Document collection
-  - Tokenizer
-  - Normalization pipeline
-  - Positional inverted index
-  - Queries and results
-- **README.md** — This file with all project details.
+Each model is evaluated using:
+- **R² (Coefficient of Determination)**
+- **MAE (Mean Absolute Error)**
+- **MAPE (Mean Absolute Percentage Error)**
 
 ---
 
-## Getting Started
+## 📁 Project Structure
 
-1. **Clone the Repository**
-   ```
-   git clone https://github.com/kittuai/IR-invertedmatrix-workshop.git
-   cd IR-invertedmatrix-workshop
-   ```
-
-2. **Set Up a Virtual Environment**
-   ```
-   python -m venv env
-   ```
-
-   **Activate it:**  
-   - **Windows (CMD):** `env\Scripts\activate`  
-   - **PowerShell:** `.\env\Scripts\Activate.ps1`  
-   - **macOS/Linux:** `source env/bin/activate`
-
-3. **Install Requirements**
-   *(Install any packages you need for the notebook)*  
-   ```
-   pip install scikit-learn nltk jupyter
-   ```
-
-4. **Add Jupyter Kernel**
-   ```
-   python -m ipykernel install --user --name=env --display-name "Python (env)"
-   ```
-
-5. **Run the Notebook**
-   - Open `IR_InvertedMatrix_Workshop.ipynb` in VS Code or Jupyter Lab.
-   - Set the kernel to **Python (env)**.
-   - Run all cells step by step.
+```
+Practical-Lab-2/
+│
+├── Lab2_Regression_Models.ipynb   # Main notebook with all models and analysis
+├── requirements.txt               # Python dependencies
+└── README.md                      # Project documentation
+```
 
 ---
 
-## Key Learning
+## 🚀 Getting Started
 
-- How to tokenize and normalize text.
-- How an inverted index maps terms to documents.
-- How positional indexing supports phrase queries.
-- How to test queries with clear results.
+Follow these steps to set up and run the lab:
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/kittuai/Practical-Lab-2.git
+cd Practical-Lab-2
+```
+
+### 2️⃣ Create & Activate Virtual Environment
+```bash
+# Create virtual environment
+python -m venv env
+
+# Activate:
+# Windows CMD
+env\Scripts\activate
+
+# Windows PowerShell
+.\env\Scripts\Activate.ps1
+
+# macOS/Linux
+source env/bin/activate
+```
+
+### 3️⃣ Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Add Virtual Environment to Jupyter
+```bash
+python -m ipykernel install --user --name=env --display-name "Python (env)"
+```
+
+### 5️⃣ Run the Notebook
+
+- Open **Lab2_Regression_Models.ipynb** in **VS Code** or **Jupyter Notebook**.
+- Set the kernel to **Python (env)**.
+- Run all cells.
 
 ---
 
-## Final Note
+## 📊 Model Comparison
 
-This notebook shows the core IR pipeline behind modern search.  
-It is a practical base for more advanced indexing and ranking methods.
+| Model                     | Characteristics                             | Notes                                              |
+|---------------------------|---------------------------------------------|----------------------------------------------------|
+| **Univariate Polynomial** | Simple curve using only BMI                 | Misses other important features                    |
+| **Multivariate Polynomial** | Multiple features, balanced fit             | Best performance — smooth, generalizable           |
+| **Decision Tree**         | Rule-based, stepwise predictions            | Less smooth; performs in discrete chunks           |
+| **k-Nearest Neighbors**   | Distance-based, neighborhood predictions    | Can be jumpy and unstable at edges                 |
 
-**Submitted for:** PROG8245 — Machine Learning Programming
+✅ **Best Model:** The **Multivariate Polynomial Regression** gave the most consistent, interpretable predictions by leveraging multiple features such as `s5`, `bp`, and `s4`.
+
+---
+
+## 📝 Conclusion
+
+The **Multivariate Polynomial Regression** model is the most appropriate for modeling diabetes progression on this dataset because it effectively balances **complexity** and **generalization**.
+
+---
+
+## ✨ Notebook Highlights
+
+- Clean explanations for each model
+- Visual analysis for easy interpretation
+- Training, validation, and test metrics compared side-by-side
+- Beginner-friendly code with helpful markdown cells
+- Fully reproducible setup using `venv` and `requirements.txt`
+
+---
+
